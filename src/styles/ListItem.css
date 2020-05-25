@@ -1,0 +1,8 @@
+.list-item {
+  list-style: none;
+  padding: 5px 0px;
+}
+
+.list-item label {
+  font-size: 1.1rem !important;
+}
