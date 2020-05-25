@@ -5,7 +5,7 @@ import AddItem from './AddItem';
 
 class App extends React.Component {
   state = {
-    items: ['first item', 'second item'],
+    items: [],
   };
 
   onSaveSubmit = (newItem) => {

@@ -14,7 +14,6 @@ class AddItem extends React.Component {
   };
 
   onSaveInputChange = (e) => {
-    console.log('AddItem - onSaveInputChange: ', e.target.value);
     this.setState({ newItem: e.target.value });
   };
 
@@ -27,31 +26,38 @@ class AddItem extends React.Component {
     }
   };
 
-  onCancelClick = (e) => {
+  onCancelClick = () => {
     console.log('AddItem - onCancelClick');
-    e.preventDefault();
+    this.setState({
+      addItem: false,
+      newItem: '',
+    });
+  };
+
+  newItemCheck = () => {
+    if (this.state.addItem) {
+      return (
+        <NewItem
+          newItem={this.state.newItem}
+          onAddItem={this.onAddItem}
+          onSaveInputChange={this.onSaveInputChange}
+          onSaveSubmit={this.onSaveSubmit}
+          onCancelClick={this.onCancelClick}
+        />
+      );
+    }
+
+    return (
+      <button onClick={this.onAddItem} className="ui button add-item-button">
+        ADD AN ITEM
+      </button>
+    );
   };
 
   render() {
-    const newItemCheck = this.state.addItem ? (
-      <NewItem
-        newItem={this.state.newItem}
-        onAddItem={this.onAddItem}
-        onSaveInputChange={this.onSaveInputChange}
-        onSaveSubmit={this.onSaveSubmit}
-        onCancelClick={this.onCancelClick}
-      />
-    ) : (
-      ''
-    );
-
     return (
       <div className="ui container add-item">
-        {newItemCheck}
-
-        <button onClick={this.onAddItem} className="ui button add-item-button">
-          ADD AN ITEM
-        </button>
+        {this.newItemCheck()}
       </div>
     );
   }

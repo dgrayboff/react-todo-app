@@ -12,8 +12,8 @@ const currDate = () => {
 };
 
 const List = ({ items }) => {
-  const renderedList = items.map((item) => {
-    return <ListItem item={item} key={item.toString()} />;
+  const renderedList = items.map((item, idx) => {
+    return <ListItem item={item} key={idx} />;
   });
 
   return (
@@ -25,6 +25,7 @@ const List = ({ items }) => {
 
       <div className="item">
         <div className="left floated content">
+          <h3 className="ui header">Your List:</h3>
           <ul>{renderedList}</ul>
         </div>
       </div>

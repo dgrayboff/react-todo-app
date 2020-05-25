@@ -1,3 +1,9 @@
 .list ul {
   padding-left: 0px;
+  margin-top: 0px;
+}
+
+.list h3.header {
+  margin: 10px 0px 5px 0px !important;
+  font-style: italic;
 }
