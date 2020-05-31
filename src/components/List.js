@@ -11,9 +11,16 @@ const currDate = () => {
   return `${month}/${day}/${year}`;
 };
 
-const List = ({ items }) => {
+const List = ({ items, onRemoveItem, handleCheck }) => {
   const renderedList = items.map((item, idx) => {
-    return <ListItem item={item} key={idx} />;
+    return (
+      <ListItem
+        item={item.val}
+        key={idx}
+        onRemoveItem={() => onRemoveItem(item.val)}
+        handleCheck={() => handleCheck(item)}
+      />
+    );
   });
 
   return (
