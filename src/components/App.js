@@ -16,7 +16,6 @@ class App extends React.Component {
     this.setState({
       items: [newItem, ...this.state.items],
     });
-    console.log(this.state.items);
   };
 
   onRemoveItem = (itemToRemove) => {

@@ -8,7 +8,6 @@ class AddItem extends React.Component {
     addItem: null,
   };
 
-  // Render <NewItem /> on click
   onAddItem = () => {
     this.setState({ addItem: true });
   };

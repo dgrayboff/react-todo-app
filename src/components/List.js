@@ -12,11 +12,11 @@ const currDate = () => {
 };
 
 const List = ({ items, onRemoveItem, handleCheck }) => {
-  const renderedList = items.map((item, idx) => {
+  const renderedList = items.map((item) => {
     return (
       <ListItem
         item={item}
-        key={idx}
+        key={item.toString()}
         onRemoveItem={() => onRemoveItem(item)}
       />
     );
