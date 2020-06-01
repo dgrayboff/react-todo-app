@@ -15,10 +15,9 @@ const List = ({ items, onRemoveItem, handleCheck }) => {
   const renderedList = items.map((item, idx) => {
     return (
       <ListItem
-        item={item.val}
+        item={item}
         key={idx}
-        onRemoveItem={() => onRemoveItem(item.val)}
-        handleCheck={() => handleCheck(item)}
+        onRemoveItem={() => onRemoveItem(item)}
       />
     );
   });

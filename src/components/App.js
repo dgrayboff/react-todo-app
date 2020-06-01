@@ -6,14 +6,8 @@ import AddItem from './AddItem';
 class App extends React.Component {
   state = {
     items: [
-      {
-        val: 'first item',
-        checked: false,
-      },
-      {
-        val: 'second item',
-        checked: false,
-      },
+      'first item',
+      'second item'
     ],
   };
 
@@ -28,15 +22,8 @@ class App extends React.Component {
   onRemoveItem = (itemToRemove) => {
     console.log('App - onRemoveItem', itemToRemove);
     this.setState({
-      items: this.state.items.filter((item) => item.val !== itemToRemove),
+      items: this.state.items.filter((item) => item !== itemToRemove),
     });
-  };
-
-  handleCheck = (item) => {
-    console.log('App - handleCheck', item);
-    // this.setState({
-    //   items.find(item => im)
-    // })
   };
 
   render() {
@@ -45,7 +32,6 @@ class App extends React.Component {
         <List
           items={this.state.items}
           onRemoveItem={this.onRemoveItem}
-          handleCheck={this.handleCheck}
         />
         <AddItem onSaveSubmit={this.onSaveSubmit} />
       </div>
