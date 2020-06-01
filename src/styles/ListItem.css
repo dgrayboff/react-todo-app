@@ -1,6 +1,8 @@
 .list-item {
   list-style: none;
   padding: 5px 0px;
+  display: flex;
+  align-items: center;
 }
 
 .list-item label {
@@ -10,4 +12,8 @@
 .list-item input:checked ~ label {
   text-decoration: line-through;
   color: gray;
+}
+
+.list-item > .icon.buttons {
+  margin-left: auto;
 }

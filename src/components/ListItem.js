@@ -9,8 +9,8 @@ class ListItem extends React.Component {
   handleCheckClick = () => {
     console.log('ListItem - handleCheckClick');
     this.setState({
-      checked: !this.state.checked
-    })
+      checked: !this.state.checked,
+    });
   };
 
   render() {
@@ -29,6 +29,13 @@ class ListItem extends React.Component {
         </div>
 
         <div className="ui icon buttons">
+          <button
+            onClick={onRemoveItem}
+            className="ui basic button"
+            type="button"
+          >
+            <i className="edit outline icon"></i>
+          </button>
           <button
             onClick={onRemoveItem}
             className="ui basic button"

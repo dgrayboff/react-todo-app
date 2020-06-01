@@ -30,7 +30,7 @@ const List = ({ items, onRemoveItem, handleCheck }) => {
       </h2>
 
       <div className="item">
-        <div className="left floated content">
+        <div>
           <h3 className="ui header">Your List:</h3>
           <ul>{renderedList}</ul>
         </div>
