@@ -1,6 +1,9 @@
 .list-item {
   list-style: none;
   padding: 5px 0px;
+}
+
+.list-item .list-item-inner {
   display: flex;
   align-items: center;
 }
@@ -14,6 +17,6 @@
   color: gray;
 }
 
-.list-item > .icon.buttons {
+.list-item .icon.buttons {
   margin-left: auto;
 }

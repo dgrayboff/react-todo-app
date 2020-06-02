@@ -5,10 +5,8 @@ import AddItem from './AddItem';
 
 class App extends React.Component {
   state = {
-    items: [
-      'first item',
-      'second item'
-    ],
+    items: ['first item', 'second item'],
+    // itemEdited: null,
   };
 
   onSaveSubmit = (newItem) => {
@@ -25,12 +23,18 @@ class App extends React.Component {
     });
   };
 
+  // onEditItem = (itemToEdit) => {
+  //   console.log('App - onEditItem: ', itemToEdit);
+  //   this.setState({ itemEdited: itemToEdit });
+  // };
+
   render() {
     return (
       <div className="ui container app">
         <List
           items={this.state.items}
           onRemoveItem={this.onRemoveItem}
+          // onEditItem={this.onEditItem}
         />
         <AddItem onSaveSubmit={this.onSaveSubmit} />
       </div>
