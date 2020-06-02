@@ -1,12 +1,10 @@
 import React from 'react';
-// import NewItem from './NewItem';
+import Form from './Form';
 
 const EditListItem = (props) => {
   console.log('EditListItem props: ', props);
   return (
-    <div>
-      <input type="text" value={props.itemValue}/>
-    </div>
+    <Form value={props.itemValue}/>
   );
 };
 
