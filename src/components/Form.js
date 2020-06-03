@@ -1,5 +1,4 @@
 import React from 'react';
-import Button from './Button';
 
 const Form = (props) => {
   return (
@@ -10,18 +9,7 @@ const Form = (props) => {
         type="text"
         placeholder={props.placeholder}
       />
-
-      <Button
-        onClick={props.onSaveSubmit}
-        type="submit"
-        className="green">
-        {props.saveCopy}
-      </Button>
-      <Button
-        onClick={props.onCancelClick}
-        type="button">
-        {props.cancelCopy}
-      </Button>
+      {props.children}
     </form>
   );
 };

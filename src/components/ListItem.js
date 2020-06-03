@@ -24,7 +24,6 @@ class ListItem extends React.Component {
 
   render() {
     const { item, onRemoveItem } = this.props;
-    console.log('ListItem props: ', this.props);
 
     return (
       <li className="list-item">

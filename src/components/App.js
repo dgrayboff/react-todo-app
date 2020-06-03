@@ -6,14 +6,19 @@ import AddItem from './AddItem';
 class App extends React.Component {
   state = {
     items: ['first item', 'second item'],
-    // itemEdited: null,
+    newItem: '',
+    addItem: null,
   };
 
-  onSaveSubmit = (newItem) => {
-    console.log('App - newItem: ', newItem);
-    this.setState({
-      items: [newItem, ...this.state.items],
-    });
+  onSaveSubmit = (e) => {
+    e.preventDefault();
+    console.log('App - e: ', e);
+    if (this.state.newItem !== '') {
+      this.setState({
+        items: [this.state.newItem, ...this.state.items],
+        newItem: '',
+      });
+    }
   };
 
   onRemoveItem = (itemToRemove) => {
@@ -23,10 +28,21 @@ class App extends React.Component {
     });
   };
 
-  // onEditItem = (itemToEdit) => {
-  //   console.log('App - onEditItem: ', itemToEdit);
-  //   this.setState({ itemEdited: itemToEdit });
-  // };
+  onAddItem = () => {
+    this.setState({ addItem: true });
+  };
+
+  onSaveInputChange = (e) => {
+    this.setState({ newItem: e.target.value });
+  };
+
+  onCancelClick = () => {
+    console.log('AddItem - onCancelClick');
+    this.setState({
+      addItem: false,
+      newItem: '',
+    });
+  };
 
   render() {
     return (
@@ -36,7 +52,14 @@ class App extends React.Component {
           onRemoveItem={this.onRemoveItem}
           // onEditItem={this.onEditItem}
         />
-        <AddItem onSaveSubmit={this.onSaveSubmit} />
+        <AddItem
+          onSaveSubmit={this.onSaveSubmit}
+          onAddItem={this.onAddItem}
+          onSaveInputChange={this.onSaveInputChange}
+          onCancelClick={this.onCancelClick}
+          addItem={this.state.addItem}
+          newItem={this.state.newItem}
+        />
       </div>
     );
   }
