@@ -44,9 +44,18 @@ class App extends React.Component {
     });
   };
 
-  onEditItem = (itemToEdit) => {
-    console.log('App - onEditItem: ', itemToEdit);
-
+  onEditItem = (e) => {
+    console.log('App - onEditItem: ', e.target.value);
+    console.log(this.state.items);
+    this.setState({
+      items: [this.state.items[0], e.target.value]
+    })
+    // this.setState(prevState => ({
+    //   items: [
+    //       ...prevState.items,
+    //       [prevState.items[1]]: e.target.value,
+    //   ]
+    // }));
   };
 
   render() {

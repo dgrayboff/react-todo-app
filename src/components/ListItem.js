@@ -1,11 +1,12 @@
 import React from 'react';
 import '../styles/ListItem.css';
 import EditListItem from './EditListItem';
+import Form from './Form';
 
 class ListItem extends React.Component {
   state = {
     checked: false,
-    edit: false,
+    edit: false
   };
 
   handleCheckClick = () => {
@@ -16,28 +17,32 @@ class ListItem extends React.Component {
   };
 
   handleEditItem = () => {
-    console.log('ListItem - handleEditItem');
     this.setState({
       edit: !this.state.edit,
     });
   };
 
-  onEditChange = (itemValue) => {
-    console.log('onEditChange: ', itemValue)
-    this.props.onEditItem(itemValue);
+  onEditChange = (e) => {
+    console.log('onEditChange: ', e.target.value)
+    console.log('onEditChange item prop: ', this.props.item)
+    // this.props.onEditItem(e);
+    this.props.onEditItem(e);
   };
 
   render() {
-    console.log('ListItem Props: ', this.props)
     const { item, onRemoveItem } = this.props;
 
     return (
       <li className="list-item">
         <div className="list-item-inner">
           {this.state.edit ? (
-            <EditListItem
-              itemValue={item}
-              onEditChange={() => this.onEditChange(item)}
+            // <EditListItem
+            //   itemValue={item}
+            //   onEditChange={() => this.onEditChange(item)}
+            // />
+            <Form
+              value={item}
+              onChange={this.onEditChange}
             />
           ) : (
             <div className="ui checkbox">
