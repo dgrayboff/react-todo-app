@@ -22,14 +22,23 @@ class ListItem extends React.Component {
     });
   };
 
+  onEditChange = (itemValue) => {
+    console.log('onEditChange: ', itemValue)
+    this.props.onEditItem(itemValue);
+  };
+
   render() {
+    console.log('ListItem Props: ', this.props)
     const { item, onRemoveItem } = this.props;
 
     return (
       <li className="list-item">
         <div className="list-item-inner">
           {this.state.edit ? (
-            <EditListItem itemValue={item} />
+            <EditListItem
+              itemValue={item}
+              onEditChange={() => this.onEditChange(item)}
+            />
           ) : (
             <div className="ui checkbox">
               <input

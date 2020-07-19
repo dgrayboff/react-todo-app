@@ -4,7 +4,10 @@ import Form from './Form';
 const EditListItem = (props) => {
   console.log('EditListItem props: ', props);
   return (
-    <Form value={props.itemValue}/>
+    <Form
+      value={props.itemValue}
+      onChange={props.onEditChange}
+    />
   );
 };
 
