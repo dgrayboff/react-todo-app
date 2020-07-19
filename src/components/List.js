@@ -11,14 +11,14 @@ const currDate = () => {
   return `${month}/${day}/${year}`;
 };
 
-const List = ({ items, onRemoveItem, onEditItem }) => {
+const List = ({ items, onRemoveItem, onEditItemSubmit }) => {
   const renderedList = items.map((item) => {
     return (
       <ListItem
         item={item}
         key={item.toString()}
         onRemoveItem={() => onRemoveItem(item)}
-        onEditItem={onEditItem}
+        onEditItemSubmit={onEditItemSubmit}
       />
     );
   });

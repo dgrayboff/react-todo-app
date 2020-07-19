@@ -44,12 +44,12 @@ class App extends React.Component {
     });
   };
 
-  onEditItem = (e) => {
-    console.log('App - onEditItem: ', e.target.value);
+  onEditItemSubmit = (item) => {
+    console.log('App - onEditItemSubmit: ', item);
     console.log(this.state.items);
-    this.setState({
-      items: [this.state.items[0], e.target.value]
-    })
+    // this.setState({
+    //   items: [...this.state.items, e.target.value]
+    // })
     // this.setState(prevState => ({
     //   items: [
     //       ...prevState.items,
@@ -64,7 +64,7 @@ class App extends React.Component {
         <List
           items={this.state.items}
           onRemoveItem={this.onRemoveItem}
-          onEditItem={this.onEditItem}
+          onEditItemSubmit={this.onEditItemSubmit}
         />
         <AddItem
           onSaveSubmit={this.onSaveSubmit}
