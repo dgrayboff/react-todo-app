@@ -1,15 +1,17 @@
 import React from 'react';
 import '../styles/ListItem.css';
 import EditListItem from './EditListItem';
-import Form from './Form';
-import Button from './Button';
 
 class ListItem extends React.Component {
   state = {
     checked: false,
     edit: false,
-    updating: this.props.item
+    updating: null
   };
+
+  componentDidMount() {
+    this.setState({ updating: this.props.item });
+  }
 
   handleCheckClick = () => {
     console.log('ListItem - handleCheckClick');
@@ -29,7 +31,6 @@ class ListItem extends React.Component {
     this.props.onEditItemSubmit(this.state.updating);
   };
 
-
   onEditChange = (e) => {
     console.log('onEditChange: ', e.target.value)
     console.log('onEditChange item prop: ', this.props.item)
@@ -45,26 +46,11 @@ class ListItem extends React.Component {
       <li className="list-item">
         <div className="list-item-inner">
           {this.state.edit ? (
-            // <EditListItem
-            //   itemValue={item}
-            //   onEditChange={() => this.onEditChange(item)}
-            // />
-            <Form
-              value={this.state.updating}
-              onChange={this.onEditChange}
-              >
-              <Button
-              onClick={this.handleEditSubmit}
-              type="submit"
-              className="green">
-              Update Item
-            </Button>
-            {/* <Button
-              onClick={props.onCancelClick}
-              type="button">
-              Cancel
-            </Button> */}
-              </Form>
+            <EditListItem
+              updating={this.state.updating}
+              onEditChange={this.onEditChange}
+              handleEditSubmit={this.handleEditSubmit}
+            />
           ) : (
             <div className="ui checkbox">
               <input

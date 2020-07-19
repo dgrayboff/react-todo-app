@@ -1,13 +1,25 @@
 import React from 'react';
 import Form from './Form';
+import Button from './Button';
 
-const EditListItem = (props) => {
-  console.log('EditListItem props: ', props);
+const EditListItem = ({ updating, onEditChange, handleEditSubmit }) => {
   return (
     <Form
-      value={props.itemValue}
-      onChange={props.onEditChange}
-    />
+      value={updating}
+      onChange={onEditChange}
+      >
+      <Button
+        onClick={handleEditSubmit}
+        type="submit"
+        className="green">
+        Update Item
+    </Button>
+    {/* <Button
+      onClick={props.onCancelClick}
+      type="button">
+      Cancel
+    </Button> */}
+    </Form>
   );
 };
 
