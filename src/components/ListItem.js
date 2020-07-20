@@ -1,6 +1,7 @@
 import React from 'react';
 import '../styles/ListItem.css';
 import EditListItem from './EditListItem';
+import Button from './Button';
 
 class ListItem extends React.Component {
   state = {
@@ -28,7 +29,7 @@ class ListItem extends React.Component {
 
   handleEditSubmit = (e) => {
     e.preventDefault();
-    this.props.onEditItemSubmit(this.state.updating);
+    this.props.onEditItemSubmit(this.state.updating, this.props.item);
   };
 
   onEditChange = (e) => {
@@ -64,20 +65,12 @@ class ListItem extends React.Component {
           )}
 
           <div className="ui icon buttons">
-            <button
-              onClick={this.handleEditItem}
-              className="ui basic button"
-              type="button"
-            >
+            <Button onClick={this.handleEditItem} className="basic">
               <i className="edit outline icon"></i>
-            </button>
-            <button
-              onClick={onRemoveItem}
-              className="ui basic button"
-              type="button"
-            >
+            </Button>
+            <Button onClick={onRemoveItem} className="basic">
               <i className="close icon"></i>
-            </button>
+            </Button>
           </div>
         </div>
       </li>

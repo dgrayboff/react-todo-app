@@ -5,7 +5,7 @@ import AddItem from './AddItem';
 
 class App extends React.Component {
   state = {
-    items: ['Make Coffee', 'Scroll Reddit'],
+    items: ['Make coffee', 'Scroll reddit', 'Pick up groceries'],
     newItem: '',
     addItem: null,
   };
@@ -44,18 +44,10 @@ class App extends React.Component {
     });
   };
 
-  onEditItemSubmit = (item) => {
-    console.log('App - onEditItemSubmit: ', item);
+  onEditItemSubmit = (newItem, prev) => {
+    console.log('App - onEditItemSubmit prev: ', prev);
+    console.log('App - onEditItemSubmit newItem: ', newItem);
     console.log(this.state.items);
-    // this.setState({
-    //   items: [...this.state.items, e.target.value]
-    // })
-    // this.setState(prevState => ({
-    //   items: [
-    //       ...prevState.items,
-    //       [prevState.items[1]]: e.target.value,
-    //   ]
-    // }));
   };
 
   render() {
