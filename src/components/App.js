@@ -3,6 +3,7 @@ import List from './List';
 import '../styles/App.css';
 import AddItem from './AddItem';
 
+// TODO: change items array values into individual objects with an id value
 class App extends React.Component {
   state = {
     items: ['Make coffee', 'Scroll reddit', 'Pick up groceries'],
@@ -23,9 +24,9 @@ class App extends React.Component {
 
   onRemoveItem = (itemToRemove) => {
     console.log('App - onRemoveItem', itemToRemove);
-    this.setState({
-      items: this.state.items.filter((item) => item !== itemToRemove),
-    });
+    this.setState((prevState) => ({
+      items: prevState.items.filter((item) => item !== itemToRemove),
+    }));
   };
 
   onAddItem = () => {
@@ -45,9 +46,12 @@ class App extends React.Component {
   };
 
   onEditItemSubmit = (newItem, prev) => {
-    console.log('App - onEditItemSubmit prev: ', prev);
-    console.log('App - onEditItemSubmit newItem: ', newItem);
-    console.log(this.state.items);
+    this.setState((prevState) => ({
+      items: [
+        ...prevState.items.map((item) =>
+          (item === prev ? newItem : item))
+      ]
+    }));
   };
 
   render() {

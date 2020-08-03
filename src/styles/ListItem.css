@@ -8,6 +8,10 @@
   align-items: center;
 }
 
+.list-item .list-item-inner button.green {
+  margin-top: 1em;
+}
+
 .list-item label {
   font-size: 1.1rem !important;
 }
@@ -19,4 +23,5 @@
 
 .list-item .icon.buttons {
   margin-left: auto;
+  align-self: flex-start;
 }

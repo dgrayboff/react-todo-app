@@ -33,8 +33,6 @@ class ListItem extends React.Component {
   };
 
   onEditChange = (e) => {
-    console.log('onEditChange: ', e.target.value)
-    console.log('onEditChange item prop: ', this.props.item)
     this.setState({
       updating: e.target.value
     })
