@@ -1,8 +1,12 @@
-Simple to-do app to play around with React.
+To-do app to play around with React.
+
+Features:
 * Add new items to list
 * Check off completed items
 * Remove items from list
 * Edit items in list
+
+I used [Semantic UI](https://semantic-ui.com/) for general page styling.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
