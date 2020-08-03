@@ -3,9 +3,7 @@ import '../styles/NewItem.css';
 import Button from './Button';
 import Form from './Form';
 
-const NewItem = (props) => {
-  console.log('New Item - props: ', props)
-  return (
+const NewItem = (props) => (
     <div className="ui input new-item">
       <Form
         onChange={props.onSaveInputChange}
@@ -26,6 +24,5 @@ const NewItem = (props) => {
       </Form>
     </div>
   );
-};
 
 export default NewItem;

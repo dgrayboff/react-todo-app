@@ -15,7 +15,6 @@ class ListItem extends React.Component {
   }
 
   handleCheckClick = () => {
-    console.log('ListItem - handleCheckClick');
     this.setState({
       checked: !this.state.checked,
     });

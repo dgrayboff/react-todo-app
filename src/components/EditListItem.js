@@ -14,11 +14,6 @@ const EditListItem = ({ updating, onEditChange, handleEditSubmit }) => {
         className="green">
         Update Item
     </Button>
-    {/* <Button
-      onClick={props.onCancelClick}
-      type="button">
-      Cancel
-    </Button> */}
     </Form>
   );
 };

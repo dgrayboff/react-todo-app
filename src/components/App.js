@@ -13,7 +13,6 @@ class App extends React.Component {
 
   onSaveSubmit = (e) => {
     e.preventDefault();
-    console.log('App - e: ', e);
     if (this.state.newItem !== '') {
       this.setState({
         items: [this.state.newItem, ...this.state.items],
@@ -23,7 +22,6 @@ class App extends React.Component {
   };
 
   onRemoveItem = (itemToRemove) => {
-    console.log('App - onRemoveItem', itemToRemove);
     this.setState((prevState) => ({
       items: prevState.items.filter((item) => item !== itemToRemove),
     }));
@@ -38,7 +36,6 @@ class App extends React.Component {
   };
 
   onCancelClick = () => {
-    console.log('AddItem - onCancelClick');
     this.setState({
       addItem: false,
       newItem: '',
