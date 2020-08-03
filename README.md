@@ -1,5 +1,7 @@
 To-do app to play around with React.
 
+See Project here:  [David's react-todo-app](https://dgrayboff.github.io/react-todo-app/)
+
 Features:
 * Add new items to list
 * Check off completed items
